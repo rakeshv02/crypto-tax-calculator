@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UK Crypto Tax Calculator 2025/26 — Capital Gains on Bitcoin & Crypto | Tabutility</title>
+  <meta name="description" content="Calculate UK capital gains tax on Bitcoin, Ethereum and other crypto for 2025/26. Supports multiple disposals, the £3,000 annual exemption, and basic/higher rate tax bands. HMRC rules." />
+  <link rel="canonical" href="https://crypto-tax-calculator.tabutility.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crypto-tax-calculator.tabutility.com/" />
+  <meta property="og:title" content="UK Crypto Tax Calculator 2025/26 — HMRC Capital Gains on Crypto" />
+  <meta property="og:description" content="Calculate UK capital gains tax on crypto for 2025/26. Supports multiple trades, £3,000 annual exemption, basic and higher rate CGT." />
+  <meta property="og:site_name" content="Tabutility" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UK Crypto Tax Calculator 2025/26","url":"https://crypto-tax-calculator.tabutility.com/","description":"Calculate UK capital gains tax on Bitcoin, Ethereum and other crypto for 2025/26 using HMRC rules.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+  <script>window.addEventListener('load',function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-78VZWJ5B1W');});</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+    a{color:#4f46e5;text-decoration:none}
+    nav{background:#1a1a2e;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-brand{color:#fff;font-size:18px;font-weight:800}
+    .nav-links a{color:rgba(255,255,255,0.8);font-size:14px;margin-left:20px;font-weight:500}
+    .nav-links a:hover{color:#fff}
+    .hero{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:40px 20px 32px;text-align:center}
+    .hero h1{font-size:clamp(22px,4vw,36px);font-weight:900;margin:0 0 10px;letter-spacing:-0.5px}
+    .hero p{color:rgba(255,255,255,0.75);margin:0;font-size:15px}
+    .badge{display:inline-block;background:#4f46e5;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:10px}
+    .wrap{max-width:800px;margin:0 auto;padding:32px 20px 60px}
+    .card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.07);margin-bottom:20px;border:1.5px solid #e8ecf2}
+    .card h2{font-size:17px;font-weight:800;margin:0 0 18px;color:#1e293b;display:flex;align-items:center;gap:8px}
+    label{display:block;font-size:12px;font-weight:600;color:#64748b;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.4px}
+    input,select{width:100%;padding:10px 12px;border:2px solid #e2e8f0;border-radius:9px;font-size:15px;color:#1e293b;background:#f8fafc;outline:none;transition:border 0.2s}
+    input:focus,select:focus{border-color:#4f46e5;background:#fff}
+    .prefix-wrap{position:relative}
+    .prefix{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#64748b;font-weight:600;pointer-events:none}
+    .prefix-wrap input{padding-left:24px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media(max-width:600px){.grid-4{grid-template-columns:1fr 1fr}}
+    @media(max-width:380px){.grid-4{grid-template-columns:1fr}}
+    .trade-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;align-items:end;padding:14px;background:#f8fafc;border-radius:10px;margin-bottom:10px;border:1.5px solid #e2e8f0}
+    @media(max-width:600px){.trade-row{grid-template-columns:1fr 1fr;}.trade-row .trade-name,.trade-row .remove-btn{grid-column:1/-1}}
+    .remove-btn{background:#fee2e2;color:#dc2626;border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}
+    .add-btn{background:#f0f0ff;color:#4f46e5;border:2px solid #4f46e5;border-radius:10px;padding:10px 18px;cursor:pointer;font-weight:700;font-size:14px;width:100%}
+    .add-btn:hover{background:#4f46e5;color:#fff}
+    .calc-btn{width:100%;padding:14px;background:#4f46e5;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:background 0.2s}
+    .calc-btn:hover{background:#4338ca}
+    .results{display:none}
+    .results.show{display:block}
+    .result-main{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;border-radius:16px;padding:28px;text-align:center;margin-bottom:16px}
+    .result-main .big{font-size:clamp(36px,6vw,56px);font-weight:900}
+    .result-main.gain .big{color:#4ade80}
+    .result-main.tax .big{color:#f87171}
+    .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+    @media(max-width:500px){.result-grid{grid-template-columns:1fr 1fr}}
+    .r-box{background:#fff;border:1.5px solid #e8ecf2;border-radius:12px;padding:16px;text-align:center}
+    .r-box .val{font-size:20px;font-weight:800;color:#4f46e5}
+    .r-box .key{font-size:12px;color:#64748b;margin-top:3px}
+    .breakdown{background:#f8fafc;border-radius:12px;padding:16px;border:1.5px solid #e2e8f0}
+    .br-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #e2e8f0;font-size:14px}
+    .br-row:last-child{border-bottom:none;font-weight:700;font-size:15px;padding-top:10px}
+    .info-box{background:#f0f9ff;border-left:4px solid #0ea5e9;border-radius:0 8px 8px 0;padding:14px 16px;font-size:13px;color:#0c4a6e;margin-bottom:16px}
+    .warn-box{background:#fef3c7;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;padding:14px 16px;font-size:13px;color:#78350f;margin-bottom:16px}
+    .ad-wrap{margin:20px 0;text-align:center;min-height:90px;background:#f8fafc;border-radius:8px;display:flex;align-items:center;justify-content:center}
+    footer{background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:24px 20px;font-size:14px}
+    footer a{color:#818cf8}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="https://tabutility.com" class="nav-brand">⚡ Tabutility</a>
+  <div class="nav-links">
+    <a href="https://tabutility.com">All Tools</a>
+    <a href="https://tabutility.com/blog/">Blog</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>₿ UK Crypto Tax Calculator</h1>
+  <p>Capital gains tax on Bitcoin, Ethereum and all crypto — HMRC rules 2025/26</p>
+  <span class="badge">Tax Year 2025/26 · Annual exemption £3,000</span>
+</div>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>⚙️ Your Tax Situation</h2>
+    <div class="grid-4">
+      <div style="grid-column:span 2">
+        <label>Income tax band (excluding crypto gains)</label>
+        <select id="tax-band">
+          <option value="basic">Basic rate taxpayer (income up to £50,270)</option>
+          <option value="higher">Higher rate taxpayer (income £50,271–£125,140)</option>
+          <option value="additional">Additional rate taxpayer (income over £125,140)</option>
+        </select>
+      </div>
+      <div>
+        <label>Tax year</label>
+        <select id="tax-year">
+          <option value="2526">2025/26</option>
+          <option value="2425">2024/25</option>
+        </select>
+      </div>
+      <div>
+        <label>Annual CGT exemption</label>
+        <input type="text" id="exemption-display" value="£3,000" readonly style="background:#e8ecf2;color:#64748b;cursor:not-allowed" />
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Your Crypto Disposals</h2>
+    <div class="info-box">A "disposal" includes selling, swapping, spending or gifting crypto. Add each disposal separately below.</div>
+    <div id="trades"></div>
+    <button class="add-btn" onclick="addTrade()">+ Add another disposal</button>
+    <button class="calc-btn" onclick="calculate()">Calculate Tax →</button>
+  </div>
+
+  <div class="results" id="results">
+    <div class="result-main gain" id="gain-box">
+      <div style="font-size:13px;opacity:0.7;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">Total Capital Gain / (Loss)</div>
+      <div class="big" id="r-gain">£0</div>
+    </div>
+
+    <div class="result-grid">
+      <div class="r-box"><div class="val" id="r-proceeds">£0</div><div class="key">Total proceeds</div></div>
+      <div class="r-box"><div class="val" id="r-cost">£0</div><div class="key">Total cost basis</div></div>
+      <div class="r-box"><div class="val" id="r-exempt">£3,000</div><div class="key">Annual exemption used</div></div>
+    </div>
+
+    <div class="breakdown">
+      <div class="br-row"><span>Total gain</span><span id="bd-gain">£0</span></div>
+      <div class="br-row"><span>Less: annual CGT exemption</span><span id="bd-exempt">−£3,000</span></div>
+      <div class="br-row"><span>Taxable gain</span><span id="bd-taxable">£0</span></div>
+      <div class="br-row"><span>CGT rate</span><span id="bd-rate">18%</span></div>
+      <div class="br-row"><span style="color:#dc2626">💰 Estimated CGT owed</span><span id="bd-tax" style="color:#dc2626">£0</span></div>
+    </div>
+
+    <div class="ad-wrap" style="margin-top:16px">
+      <ins class="adsbygoogle" style="display:block;width:100%;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="warn-box">⚠️ <strong>This is an estimate only.</strong> HMRC's crypto tax rules include the same-day rule, the 30-day bed-and-breakfast rule, and the section 104 pool method for share matching. These can significantly change your liability. Consult an accountant or use HMRC's official guidance for your self-assessment return.</div>
+  </div>
+
+  <div class="ad-wrap">
+    <ins class="adsbygoogle" style="display:block;width:100%;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+  <div class="card">
+    <h2>📖 UK Crypto Tax Rules (2025/26)</h2>
+    <div style="font-size:14px;color:#475569">
+      <p style="margin:0 0 10px"><strong>CGT rates on crypto (non-property assets):</strong> Basic rate taxpayers pay 18% on gains. Higher and additional rate taxpayers pay 24%.</p>
+      <p style="margin:0 0 10px"><strong>Annual exempt amount:</strong> The first £3,000 of gains each tax year is free of CGT (2025/26 and 2024/25).</p>
+      <p style="margin:0 0 10px"><strong>What counts as a disposal:</strong> Selling crypto for cash, swapping one crypto for another, spending crypto on goods/services, and gifting crypto (except to a spouse) are all taxable disposals.</p>
+      <p style="margin:0"><strong>Losses:</strong> Capital losses can be offset against gains in the same or future tax years. Report them to HMRC within 4 years.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>⚡ <a href="https://tabutility.com">Tabutility</a> — Free tax calculators · For estimates only · Not financial or tax advice · Consult HMRC or an accountant</p>
+</footer>
+
+<script>
+let tradeCount=0;
+
+function addTrade(name='',proceeds='',cost='',qty=''){
+  const id=++tradeCount;
+  const div=document.createElement('div');
+  div.className='trade-row';
+  div.id='trade-'+id;
+  div.innerHTML=`
+    <div class="trade-name">
+      <label>Asset (e.g. Bitcoin)</label>
+      <input type="text" placeholder="BTC, ETH, SOL..." value="${name}" id="t-name-${id}" />
+    </div>
+    <div>
+      <label>Proceeds (£)</label>
+      <div class="prefix-wrap"><span class="prefix">£</span><input type="number" min="0" step="0.01" placeholder="10000" value="${proceeds}" id="t-proc-${id}" /></div>
+    </div>
+    <div>
+      <label>Cost basis (£)</label>
+      <div class="prefix-wrap"><span class="prefix">£</span><input type="number" min="0" step="0.01" placeholder="5000" value="${cost}" id="t-cost-${id}" /></div>
+    </div>
+    <div>
+      <label>Gain / (Loss)</label>
+      <input type="text" readonly id="t-gain-${id}" style="background:#e8ecf2;color:#475569;cursor:not-allowed;font-weight:700" placeholder="Auto" />
+    </div>
+    <div><button class="remove-btn" onclick="removeTrade(${id})">✕</button></div>
+  `;
+  document.getElementById('trades').appendChild(div);
+  ['t-proc-'+id,'t-cost-'+id].forEach(eid=>{
+    document.getElementById(eid).addEventListener('input',()=>updateTradeGain(id));
+  });
+}
+
+function updateTradeGain(id){
+  const proc=parseFloat(document.getElementById('t-proc-'+id).value)||0;
+  const cost=parseFloat(document.getElementById('t-cost-'+id).value)||0;
+  const gain=proc-cost;
+  const el=document.getElementById('t-gain-'+id);
+  el.value=(gain>=0?'£':'−£')+Math.abs(gain).toLocaleString('en-GB',{maximumFractionDigits:2});
+  el.style.color=gain>=0?'#16a34a':'#dc2626';
+}
+
+function removeTrade(id){
+  const el=document.getElementById('trade-'+id);
+  if(el)el.remove();
+}
+
+function calculate(){
+  const band=document.getElementById('tax-band').value;
+  const exemption=3000;
+  const rate=band==='basic'?0.18:0.24;
+
+  let totalProceeds=0,totalCost=0;
+  document.querySelectorAll('[id^="t-proc-"]').forEach(el=>{
+    const id=el.id.replace('t-proc-','');
+    const proc=parseFloat(el.value)||0;
+    const cost=parseFloat(document.getElementById('t-cost-'+id).value)||0;
+    totalProceeds+=proc;
+    totalCost+=cost;
+  });
+
+  const totalGain=totalProceeds-totalCost;
+  const taxableGain=Math.max(0,totalGain-exemption);
+  const taxOwed=taxableGain*rate;
+  const exemptUsed=Math.min(exemption,Math.max(0,totalGain));
+
+  document.getElementById('r-gain').textContent=(totalGain>=0?'£':'−£')+Math.abs(Math.round(totalGain)).toLocaleString('en-GB');
+  document.getElementById('gain-box').className='result-main '+(totalGain>=0?'gain':'loss');
+  document.getElementById('r-gain').style.color=totalGain>=0?'#4ade80':'#f87171';
+  document.getElementById('r-proceeds').textContent='£'+Math.round(totalProceeds).toLocaleString('en-GB');
+  document.getElementById('r-cost').textContent='£'+Math.round(totalCost).toLocaleString('en-GB');
+  document.getElementById('r-exempt').textContent='£'+Math.round(exemptUsed).toLocaleString('en-GB');
+
+  document.getElementById('bd-gain').textContent='£'+Math.round(totalGain).toLocaleString('en-GB');
+  document.getElementById('bd-exempt').textContent='−£'+Math.round(exemptUsed).toLocaleString('en-GB');
+  document.getElementById('bd-taxable').textContent='£'+Math.round(taxableGain).toLocaleString('en-GB');
+  document.getElementById('bd-rate').textContent=(rate*100)+'% ('+(band==='basic'?'basic rate':'higher/additional rate')+')';
+  document.getElementById('bd-tax').textContent='£'+Math.round(taxOwed).toLocaleString('en-GB');
+
+  document.getElementById('results').classList.add('show');
+  try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}
+}
+
+// Start with one trade
+addTrade('Bitcoin','10000','5000');
+try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}
+</script>
+</body>
+</html>
